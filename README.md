@@ -3,9 +3,11 @@ Setting up Raspbian for the RFID RC522
 
 Before we begin the process of utilizing the RFID RC522 on our Raspberry Pi, we will first have to make changes to its configuration. By default, the Raspberry Pi has the SPI (Serial Peripheral Interface) disabled, which is a bit of a problem as that is what our RFID reader circuit runs through.
 Don’t worry though as it is fairly simple to re-enable this interface, just follow our steps below to configure your Raspberry Pi and Raspbian to utilize the SPI interface.
+
     1. Let’s begin by first opening the raspi-config tool, and we can do this by opening the terminal and running the following command.
             sudo raspi-config
-       On here use the arrow keys to select “5 Interfacing Options“. Once you have this option selected, press Enter.
+    
+    2. Select “5 Interfacing Options“. Once you have this option selected, press Enter.
 
     3. Select “P4 SPI“, again press Enter to select the option once it is highlighted.
     
@@ -16,13 +18,13 @@ Don’t worry though as it is fairly simple to re-enable this interface, just fo
     6. Run the following command to see if spi_bcm2835 is listed.
             lsmod | grep spi
             
-    1. Run the following two commands on your Raspberry Pi to update it.
+    7. Run the following two commands on your Raspberry Pi to update it.
             sudo apt-get update
             sudo apt-get upgrade
 
-    2. Run the following command to install all of the required packages for this guide on setting up your RFID reader.
+    8. Run the following command to install all of the required packages for this guide on setting up your RFID reader.
             sudo apt-get install python2.7-dev python-pip git
-    3. Run the following command  on your Raspberry Pi to install spidev to your Raspberry Pi through pip.
+    9. Run the following command  on your Raspberry Pi to install spidev to your Raspberry Pi through pip.
             sudo pip install spidev
 
 
